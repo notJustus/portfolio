@@ -1,0 +1,60 @@
+@use "../../styles/commonStylesMixins.scss" as *;
+
+.footer {
+  @include flexSettings(row, space-between, center);
+  @include sectionLayout(20px 70px, var(--background-two));
+  font-size: 20px;
+  border-top: 2px solid var(--border-one);
+  color: var(--text-color-one);
+
+  &-copyright {
+    flex: 1;
+    
+    &-main-text {
+      margin-bottom: 5px;
+    }
+
+    &-sub-text {
+      margin-bottom: 5px;
+    }
+  }
+
+  &-socialmedia {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    &-links {
+      display: flex;
+      gap: 20px;
+
+      img {
+        @include imageSize(35px, 35px, contain);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+    gap: 20px;
+
+    &-copyright {
+      order: 1;
+    }
+
+    &-socialmedia {
+      order: 2;
+      justify-content: center;
+    }
+  }
+}

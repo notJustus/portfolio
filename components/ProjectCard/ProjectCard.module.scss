@@ -1,0 +1,138 @@
+@use "../../styles/commonStylesMixins.scss" as *;
+
+.project-card {
+  @include sectionLayout(15px, var(--secondary-background-one));
+  @include borderWithRadius(1px solid #6b7688, 10px);
+  width: 250px;
+  text-align: center;
+  color: var(--text-color-one);
+  transition: all 0.5s ease-in-out;
+
+  img {
+    @include imageSize(200px, 120px, fill);
+  }
+
+  &-image-container {
+    position: relative;
+    cursor: pointer;
+    
+    img {
+      @include imageSize(200px, 120px, fill);
+    }
+  }
+
+  &-play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+  }
+
+  &-play-button {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #9c27b0;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
+  &-image-container:hover &-play-overlay {
+    opacity: 1;
+  }
+
+  &-image-container:hover &-play-button {
+    transform: scale(1.1);
+    background-color: white;
+  }
+
+  &-icon-container {
+    @include imageSize(200px, 120px, contain);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-two);
+    border-radius: 10px;
+    border: 1px solid var(--border-one);
+  }
+
+  &-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  &-description {
+    font-size: 16px;
+    word-spacing: 1px;
+  }
+
+  &-techStack {
+    margin-bottom: 15px;
+
+    &-tech {
+      @include borderWithRadius(1px solid #9c27b0, 5px);
+      display: inline-flex;
+      margin: 3px 5px 3px -1px;
+      font-size: 12px;
+      padding: 4px;
+      color: #9c27b0;
+      font-weight: 600;
+    }
+  }
+
+  &-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    img {
+      @include imageSize(35px, 35px, contain);
+      @include borderWithRadius(1px solid #6b7688, 50%);
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &-video-button {
+    @include imageSize(35px, 35px, contain);
+    @include borderWithRadius(1px solid #6b7688, 50%);
+    background-color: var(--background-two);
+    border: 1px solid #6b7688;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: #9c27b0;
+      color: white;
+    }
+  }
+}
+
+.project-card:hover {
+  box-shadow: 0 2px 10px #6b7688;
+}

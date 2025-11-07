@@ -1,0 +1,67 @@
+@use "../../styles/commonStylesMixins.scss" as *;
+
+.skill-card {
+  @include flexSettings(column, center, center);
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+
+  &-heading {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--main-text-color);
+  }
+
+  &-heading::after {
+    display: block;
+    height: 3px;
+    background-color: #9c27b0;
+    content: "";
+    width: 70px;
+    margin: 5px auto 10px auto;
+  }
+
+  &-container {
+    @include flexSettings(row, center, center);
+    width: 100%;
+    flex-wrap: wrap;
+
+    &-item {
+      @include flexSettings(column, center, center);
+      @include borderWithRadius(1px solid var(--skills-card-border), 10px);
+      width: 100px;
+      height: 120px;
+      text-align: center;
+      margin: 10px;
+      background-color: var(--background-two);
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      svg {
+        margin-bottom: 10px;
+        transition: all 0.3s ease;
+      }
+
+      p {
+        font-size: 14px;
+        width: 100%;
+        color: var(--text-color-one);
+        transition: color 0.3s ease;
+      }
+    }
+
+    &-item:hover {
+      box-shadow: 0 4px 15px var(--skills-card-shadow);
+      transform: translateY(-2px);
+      
+      svg {
+        transform: scale(1.1);
+        color: #9c27b0;
+      }
+      
+      p {
+        color: var(--main-text-color);
+      }
+    }
+  }
+}

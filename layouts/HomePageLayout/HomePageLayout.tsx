@@ -5,7 +5,7 @@ import type { NextPage } from "next";
 import classNames from "classnames/bind";
 // Removed Toaster as contact form and toasts are no longer used
 import Image from "next/image";
-import { CircularLoader, Navbar } from "@/components";
+import { Navbar } from "@/components";
 import { AboutSection, JobsSection, ProjectsSection, SkillsSection, FooterSection } from "@/containers";
 import { SECTION } from "@/utils/constants/constants";
 import { IHomePageLayoutProps } from "@/utils/typings/typings";
@@ -14,11 +14,7 @@ import styles from "./HomePageLayout.module.scss";
 
 const cx = classNames.bind(styles);
 
-const HomePageLayout: NextPage<IHomePageLayoutProps> = ({
-  cmsApiResponse,
-  cmsApiError,
-  CmsApiLoading,
-}) => {
+const HomePageLayout: NextPage<IHomePageLayoutProps> = ({ cmsApiResponse }) => {
   const sectionsRef = useRef<Record<string, HTMLElement | null>>({});
   const { isScrollButtonVisible } = useScroll();
   const { theme, switchTheme } = useTheme();
@@ -35,20 +31,6 @@ const HomePageLayout: NextPage<IHomePageLayoutProps> = ({
       behavior: "smooth",
     });
   };
-
-  if (cmsApiError)
-    return (
-      <div data-theme={theme} className={cx("error-container")}>
-        OOPS...Our servers are a little overwhelmed. Give it a moment and try again.
-      </div>
-    );
-
-  if (CmsApiLoading)
-    return (
-      <div data-theme={theme} className={cx("loader-container")}>
-        <CircularLoader />
-      </div>
-    );
 
   return (
     <div data-theme={theme} className={cx("home-page-layout")}>

@@ -279,12 +279,13 @@ export const mockData = {
   projects: [
     {
       id: "proj-5",
-      title: "NextUp (ongoing)",
+      title: "Vector Image Editor (ongoing)",
       uniqueId: 5,
-      description: "Building a full-stack to-do app using React and Python.",
+      description:
+        "Building a full-stack vector image editor using React and Python. Provides a chat interface for interacting and editing vector images.",
       demoLink: "",
       videoUrl: "",
-      githubLink: "https://github.com/notJustus/nextUp",
+      githubLink: "",
       techStack: [
         { text: "All" },
         { text: "Full-Stack" },

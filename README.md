@@ -2,7 +2,7 @@
 
 <p align="center">
 	<img src="https://img.shields.io/badge/Platform-Web%2C%20Mobile-brightgreen" alt="Platform-Web">
-    <img src="https://img.shields.io/badge/Tech%20Stack-Nextjs%2C%20TypeScript%2C%20SCSS%2C%20GraphQL%2C%20GraphCMS-9cf" alt="Tech-Stack">
+    <img src="https://img.shields.io/badge/Tech%20Stack-Nextjs%2C%20TypeScript%2C%20SCSS-9cf" alt="Tech-Stack">
 </p>
 
 <br>

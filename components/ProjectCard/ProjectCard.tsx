@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import classNames from "classnames/bind";
 import { SiFiles } from "react-icons/si";
-import { FaMemory } from "react-icons/fa";
+import { FaMemory, FaVectorSquare } from "react-icons/fa";
 import { TechStack } from "@/utils/constants/constants";
 import { IProjectCardProps } from "@/utils/typings/typings";
 import { VideoModal } from "@/components";
@@ -21,6 +21,8 @@ const ProjectCard: NextPage<IProjectCardProps> = ({ project }) => {
         return <FaMemory size={80} color="var(--text-color-two)" />;
       case "Filesystem":
         return <SiFiles size={80} color="var(--text-color-two)" />;
+      case "Vector Image Editor (ongoing)":
+        return <FaVectorSquare size={80} color="var(--text-color-two)" />;
       default:
         return null;
     }

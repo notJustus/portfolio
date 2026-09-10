@@ -20,8 +20,7 @@ export enum Months {
 export const TechStack = {
   All: "All",
   FullStack: "Full-Stack",
-  SystemLevel: "System Level",
-  Games: "Games",
+  AI: "AI",
 };
 
 export const SECTION = {

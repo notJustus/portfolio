@@ -31,7 +31,7 @@ const ProjectsSection: NextPage<IProjectsSectionProps> = ({ projects }) => {
 
   return (
     <div className={cx("projects")}>
-      <h1 className={cx("projects-heading")}>Personal Projects</h1>
+      <h1 className={cx("projects-heading")}>Projects</h1>
       <div className={cx("projects-filter")}>
         {Object.entries(TechStack).map(([key, value]) => {
           return (

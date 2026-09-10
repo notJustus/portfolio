@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
 import classNames from "classnames/bind";
-import { SiFiles } from "react-icons/si";
-import { FaMemory, FaVectorSquare } from "react-icons/fa";
+import { FaBeer, FaRobot } from "react-icons/fa";
 import { TechStack } from "@/utils/constants/constants";
 import { IProjectCardProps } from "@/utils/typings/typings";
 import { VideoModal } from "@/components";
@@ -12,17 +11,18 @@ import styles from "./ProjectCard.module.scss";
 
 const cx = classNames.bind(styles);
 
+// Filter tab labels double as techStack entries, so they are not shown as tech chips
+const filterCategories = new Set(Object.values(TechStack).map(value => value.toLowerCase()));
+
 const ProjectCard: NextPage<IProjectCardProps> = ({ project }) => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   const getProjectIcon = () => {
     switch (project?.title) {
-      case "Malloc":
-        return <FaMemory size={80} color="var(--text-color-two)" />;
-      case "Filesystem":
-        return <SiFiles size={80} color="var(--text-color-two)" />;
-      case "Vector Image Editor (ongoing)":
-        return <FaVectorSquare size={80} color="var(--text-color-two)" />;
+      case "PintKing":
+        return <FaBeer size={80} color="var(--text-color-two)" />;
+      case "AgentLink":
+        return <FaRobot size={80} color="var(--text-color-two)" />;
       default:
         return null;
     }
@@ -65,20 +65,13 @@ const ProjectCard: NextPage<IProjectCardProps> = ({ project }) => {
       </div>
       <p className={cx("project-card-title")}>{project?.title}</p>
       <div className={cx("project-card-techStack")}>
-        {project?.techStack?.map(stack => {
-          if (
-            stack?.text?.toLowerCase() !== TechStack.All.toLowerCase() &&
-            stack?.text?.toLowerCase() !== TechStack.Games.toLowerCase() &&
-            stack?.text?.toLowerCase() !== TechStack.SystemLevel.toLowerCase() &&
-            stack?.text?.toLowerCase() !== TechStack.FullStack.toLowerCase()
-          ) {
-            return (
-              <span key={stack?.text} className={cx("project-card-techStack-tech")}>
-                {stack?.text}
-              </span>
-            );
-          }
-        })}
+        {project?.techStack
+          ?.filter(stack => !filterCategories.has(stack?.text?.toLowerCase()))
+          ?.map(stack => (
+            <span key={stack?.text} className={cx("project-card-techStack-tech")}>
+              {stack?.text}
+            </span>
+          ))}
       </div>
       <p className={cx("project-card-description")}>{project?.description}</p>
       <div className={cx("project-card-links")}>

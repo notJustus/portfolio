@@ -53,6 +53,7 @@
       width: 320px;
       background-clip: content-box, border-box;
       background-size: cover;
+      background-position: center;
       background-image:
         url("/assets/profilePic.webp"),
         linear-gradient(to bottom left, var(--about-profilepic-one), var(--about-profilepic-two));

@@ -6,7 +6,7 @@ import classNames from "classnames/bind";
 // Removed Toaster as contact form and toasts are no longer used
 import Image from "next/image";
 import { Navbar } from "@/components";
-import { AboutSection, JobsSection, ProjectsSection, SkillsSection, FooterSection } from "@/containers";
+import { AboutSection, JobsSection, ProjectsSection, FooterSection } from "@/containers";
 import { SECTION } from "@/utils/constants/constants";
 import { IHomePageLayoutProps } from "@/utils/typings/typings";
 import { useScroll, useTheme } from "@/utils/hooks";
@@ -19,7 +19,7 @@ const HomePageLayout: NextPage<IHomePageLayoutProps> = ({ cmsApiResponse }) => {
   const { isScrollButtonVisible } = useScroll();
   const { theme, switchTheme } = useTheme();
 
-  const { jobs, skills, projects } = cmsApiResponse;
+  const { jobs, projects } = cmsApiResponse;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -61,14 +61,6 @@ const HomePageLayout: NextPage<IHomePageLayoutProps> = ({ cmsApiResponse }) => {
           }}
         >
           <ProjectsSection projects={projects} />
-        </section>
-        <section
-          className={cx("skills-section")}
-          ref={el => {
-            sectionsRef.current.skills = el;
-          }}
-        >
-          <SkillsSection skills={skills} />
         </section>
         {/** Contact section removed */}
       </main>

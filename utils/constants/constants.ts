@@ -17,15 +17,6 @@ export enum Months {
   Dec = 12,
 }
 
-export const SKILLSET = {
-  LANGUAGES: "Languages",
-  FRONTEND: "Frontend",
-  BACKEND: "Backend",
-  MOBILE: "Mobile",
-  MACHINE_LEARNING: "Machine Learning",
-  OTHERS: "Others",
-};
-
 export const TechStack = {
   All: "All",
   FullStack: "Full-Stack",
@@ -37,5 +28,4 @@ export const SECTION = {
   ABOUT: "about",
   JOBS: "jobs",
   PROJECTS: "projects",
-  SKILLS: "skills",
 };

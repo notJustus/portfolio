@@ -41,9 +41,6 @@ const Navbar: NextPage<INavbarProps> = ({
           <p className={cx("navbar-list-item")} onClick={() => onNavItemClick(SECTION.PROJECTS)}>
             Projects
           </p>
-          <p className={cx("navbar-list-item")} onClick={() => onNavItemClick(SECTION.SKILLS)}>
-            Skills
-          </p>
           {/** Contact removed */}
         </div>
       </nav>
@@ -56,9 +53,6 @@ const Navbar: NextPage<INavbarProps> = ({
         </p>
         <p className={cx("sidebar-item")} onClick={() => onNavItemClick(SECTION.PROJECTS)}>
           Projects
-        </p>
-        <p className={cx("sidebar-item")} onClick={() => onNavItemClick(SECTION.SKILLS)}>
-          Skills
         </p>
         {/** Contact removed */}
       </div>

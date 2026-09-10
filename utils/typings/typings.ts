@@ -6,16 +6,6 @@ export interface IText {
   text: string;
 }
 
-export interface ISkills {
-  id: string;
-  uniqueId: number;
-  proficient: boolean;
-  skill: string;
-  url: string;
-  fieldType: string | null;
-  image: IUrl;
-}
-
 export interface IJobs {
   id: string;
   company: string;
@@ -48,7 +38,6 @@ export interface INavbarProps {
 export interface ICmsApiResponse {
   jobs: IJobs[];
   projects: IProjects[];
-  skills: ISkills[];
 }
 
 export interface IHomePageLayoutProps {
@@ -63,21 +52,12 @@ export interface IJobsSectionProps {
   jobs: IJobs[];
 }
 
-export interface ISkillsSectionProps {
-  skills: ISkills[];
-}
-
 export interface IProjectCardProps {
   project: IProjects;
 }
 
 export interface IJobCardProps {
   job: IJobs;
-}
-
-export interface ISkillCardProps {
-  skills: ISkills[];
-  skillName: string;
 }
 
 // IContactFormProps removed with Contact feature deletion

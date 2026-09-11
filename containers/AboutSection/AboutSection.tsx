@@ -14,13 +14,15 @@ const AboutSection: NextPage = () => {
       <div className={cx("about-left")}>
         <h1 className={cx("about-left-head")}>Justus Beck</h1>
         <h2 className={cx("about-left-tagline")}>
-          I teach mobile development and study AI. Now building full-stack applications.
+          AI Engineer in Amsterdam. I build AI systems with evals that prove they work.
         </h2>
         <p className={cx("about-left-text")}>
-          I'm a mobile engineer and AI master student living in Amsterdam. After 3 years of teaching
-          others how to build scalable & clean native iOS and Android apps, I want to go back to
-          building software myself! Outside of coding, you can find me playing padel at B. Amsterdam
-          or with a cheeky pint in Amsterdam's beautiful grachten!
+          I'm about to finish my MSc in Artificial Intelligence at the Vrije Universiteit Amsterdam,
+          where my thesis work at Philips turned a manual traceability process into a ReAct agent:
+          benchmarked against published systems and deployed on AWS. Before that I spent three years
+          teaching iOS and Android engineers to build clean, scalable apps. Outside of coding, you
+          can find me playing padel at B. Amsterdam or with a cheeky pint in Amsterdam's beautiful
+          grachten!
         </p>
         <div className={cx("about-left-socialMedia")}>
           <Image

@@ -8,7 +8,7 @@ export const mockData = {
       companyUrl: "",
       from: "2026-03-01",
       to: "2026-08-01",
-      logo: { url: "/assets/phillips-logo.webp" },
+      logo: { url: "/assets/philips.webp" },
     },
     {
       id: "job-2",

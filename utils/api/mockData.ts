@@ -50,7 +50,7 @@ export const mockData = {
         "Social iOS app where every drink is logged with a photo, scored on a group leaderboard, and pinned to a map of past nights out.",
       demoLink: "",
       videoUrl: "",
-      githubLink: "https://github.com/notJustus/pint-king",
+      githubLink: "https://tinyurl.com/27ccwx4c",
       techStack: [
         { text: "All" },
         { text: "Full-Stack" },
